@@ -41,6 +41,8 @@ class Play extends  Phaser.Scene {
         keyLEFT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.LEFT);
         keyRIGHT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.RIGHT);
 
+        mouseLEFT - this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.cliick);
+
         this.anims.create({
             key: 'catwalk',
             frames: this.anims.generateFrameNumbers('cat', {start: 0, end: 4, first: 0}),
