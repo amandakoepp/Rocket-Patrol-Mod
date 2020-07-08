@@ -1,9 +1,9 @@
 //creating Play
-class Play extends  Phaser.Scene {
+class Play extends Phaser.Scene {
     constructor(){
         super("playScene")
     }
-
+    
     preload() {
         //load images/tile sprites
         this.load.image('cat_treat', './assets/Cat Treat1.png');
@@ -12,6 +12,17 @@ class Play extends  Phaser.Scene {
         //load spritesheet
         this.load.spritesheet('explosion', './assets/Heartshield.png', {frameWidth: 64, frameHeight: 64, startFrame: 0, endFrame: 9});
         this.load.spritesheet('cat', './assets/CatWalkSeq.png', {frameWidth: 64, frameHeight: 64, startFrame: 0, endFrame: 4});
+    }
+
+    //mouse movement https://www.codecaptain.io/blog/game-development/shooting-bullets-phaser-3-using-arcade-physics-groups/696
+    addEvents() {
+        this.input.on('pointermove', (pointer) => {
+            this.p1Rocket.x = pointer.x;
+        });
+        // Clicking the mouse should fire a bullet
+        this.input.on('pointerdown', (pointer) => {
+            this.keyF;
+        });
     }
 
     create() {
@@ -41,7 +52,8 @@ class Play extends  Phaser.Scene {
         keyLEFT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.LEFT);
         keyRIGHT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.RIGHT);
 
-        mouseLEFT - this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.cliick);
+        //call addEvent
+        this.addEvents();
 
         this.anims.create({
             key: 'catwalk',
@@ -78,13 +90,32 @@ class Play extends  Phaser.Scene {
         //game over flag
         this.gameOver = false;
 
-        //60-second play cock
+        
+        
+
+        //60-second play clock
         scoreConfig.fixedWidth = 0;
         this.clock = this.time.delayedCall(game.settings.gameTimer, () => {
             this.add.text(game.config.width/2, game.config.height/2, 'GAME OVER', scoreConfig).setOrigin(0.5);
             this.add.text(game.config.width/2, game.config.height/2 + 64, '(F)eed to Restart or <- for Menu', scoreConfig).setOrigin(0.5);
             this.gameOver = true;
         }, null, this);
+
+        /*clock display
+        let timeConfig = {
+            fontFamily: 'Courier',
+            fontSize: '28px',
+            backgroundColor: '#F3B141',
+            color: '#843605',
+            align: 'right',
+            padding: {
+                top: 5,
+                bottom: 5,
+            },
+            fixedWidth: 100
+        }
+        this.timeRight = this.add.text(200, 54, this.game.settings.gameTimer, timeConfig);
+        */
     }
 
     update() {
@@ -121,6 +152,7 @@ class Play extends  Phaser.Scene {
             this.p1Rocket.reset();
             this.shipExplode(this.ship01);
         }
+
 
     }
 

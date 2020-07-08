@@ -10,6 +10,7 @@ class CatTreat extends Phaser.GameObjects.Sprite {
         this.isFiring = false; //creating a boolean; checking the Rocket's firing status
 
         this.sfxRocket = scene.sound.add('sfx_rocket'); //add rocket sfx
+
     }
 
     update(){
