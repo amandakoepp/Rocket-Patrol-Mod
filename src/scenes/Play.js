@@ -7,14 +7,14 @@ class Play extends Phaser.Scene {
     preload() {
     
         //load images/tile sprites
-        this.load.image('cat_treat', './assets/Cat Treat1.png');
-        this.load.image('kitchen', './assets/Kitchen scroller bg.png');
-        this.load.image('Border', './assets/Border.png');
+        this.load.image('cat_treat', './assets/Cat Treat1.PNG');
+        this.load.image('kitchen', './assets/Kitchen scroller bg.PNG');
+        this.load.image('Border', './assets/Border.PNG');
         this.load.image('kitten', './assets/Kitten.png');
 
         //load spritesheet
         this.load.spritesheet('explosion', './assets/Heartshield.png', {frameWidth: 64, frameHeight: 64, startFrame: 0, endFrame: 9});
-        this.load.spritesheet('cat', './assets/CatWalkSeq.png', {frameWidth: 64, frameHeight: 64, startFrame: 1, endFrame: 3});
+        this.load.spritesheet('cat', './assets/CatWalkSeq.PNG', {frameWidth: 64, frameHeight: 64, startFrame: 1, endFrame: 3});
     }
 
     //mouse movement https://www.codecaptain.io/blog/game-development/shooting-bullets-phaser-3-using-arcade-physics-groups/696

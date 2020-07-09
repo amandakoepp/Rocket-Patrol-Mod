@@ -11,8 +11,8 @@ class Menu extends  Phaser.Scene {
         this.load.audio('sfx_rocket', './assets/rocket_shot.wav');
 
         //background 
-        this.load.image('kitchen', './assets/Kitchen scroller bg.png');
-        this.load.spritesheet('cat', './assets/CatWalkSeq.png', {frameWidth: 64, frameHeight: 64, startFrame: 0, endFrame: 3});
+        this.load.image('kitchen', './assets/Kitchen scroller bg.PNG');
+        this.load.spritesheet('cat', './assets/CatWalkSeq.PNG', {frameWidth: 64, frameHeight: 64, startFrame: 0, endFrame: 3});
     }
 
     create() {
