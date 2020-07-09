@@ -13,6 +13,7 @@ class CatTreat extends Phaser.GameObjects.Sprite {
 
     }
 
+
     update(){
         //left/right moevement
         if(!this.isFiring) { //if the player is not firing and holding left key
