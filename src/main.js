@@ -1,3 +1,15 @@
+/* Point Breakdown:
+    + Create a new spaceship type (w/ new artwork) that's smaller,
+        moves faster, and is worth more points (25)
+    + Create a new scrolling tile sprite for the background (10)
+    + Allow the player to control the Rocket after it's fired (10)
+        [this is done using the mouse]
+    + Replace UI borders with new artwork (15)
+    + Create a new Title Screen (15)
+    + Create new artwork for all of the in-game assets (rocket, spaceships, explosion) (25) 
+
+*/
+
 //create game configuration object
 let config = {
     type: Phaser.CANVAS,
